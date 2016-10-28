@@ -12,11 +12,14 @@
 package com.relax.www.rpc.server;
 
 import java.io.IOException;
+import java.util.Arrays;
 
 import org.apache.hadoop.HadoopIllegalArgumentException;
 import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.hdfs.server.common.HdfsServerConstants.StartupOption;
 import org.apache.hadoop.ipc.RPC;
 import org.apache.hadoop.ipc.RPC.Server;
+import org.junit.Test;
 
 public class LoginRpcServer {
 
@@ -36,6 +39,11 @@ public class LoginRpcServer {
 		builder.setBindAddress("192.168.60.25").setPort(10000).setInstance(new LoginServiceImpl()).setProtocol(LoginServiceInterface.class);
 		Server server = builder.build();
 		server.start();
+	}
+	
+	@Test
+	public void test(){
+		System.out.println(Arrays.asList(StartupOption.RECOVER.getName()));
 	}
 
 }

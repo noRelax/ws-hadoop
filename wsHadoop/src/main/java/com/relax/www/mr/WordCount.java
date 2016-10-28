@@ -30,7 +30,7 @@ public class WordCount {
 		job.setReducerClass(WCReducer.class);
 		job.setOutputKeyClass(Text.class);
 		job.setOutputValueClass(LongWritable.class);
-		FileOutputFormat.setOutputPath(job, new Path("hdfs://hadoop01:9000/output5/"));
+		FileOutputFormat.setOutputPath(job, new Path("hdfs://hadoop01:9000/output6/"));
 		
 		//submit
 		job.waitForCompletion(true);
